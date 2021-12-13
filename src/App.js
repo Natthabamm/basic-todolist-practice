@@ -14,7 +14,7 @@ const initialTodoList = [
 
 // const previousTodo = [a, b, c] // nextTodo = [d, a, b, c]
 // previousTodo.unshift(d)
-// const nextTodo =previousTodo.slice(0);
+// const nextTodo = previousTodo.slice(0);
 // nextTodo.splice(0, 0, d)
 // const nextTodo =[d, ...previousTodo]
 
@@ -26,13 +26,21 @@ function App() {
     setTodoList(nextTodo);
   };
 
+  const deleteTodo = id => {
+    let newTodo = [...todoList]
+    let delId = newTodo.findIndex(el => id === el.id)
+    console.log(delId)
+    newTodo.splice(delId, 1)
+    setTodoList(newTodo);
+  }
+
   return (
     <div className="container">
       <div className="mt-5 mx-auto mw-xs">
         <AddTodo createTodo={createTodo} />
         <SearchBar />
         <RemainingMessage />
-        <TodoList todoList={todoList} />
+        <TodoList todoList={todoList} deleteTodo={deleteTodo} />
       </div>  
     </div>
   );
