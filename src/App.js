@@ -29,9 +29,18 @@ function App() {
   const deleteTodo = id => {
     let newTodo = [...todoList]
     let delId = newTodo.findIndex(el => id === el.id)
-    console.log(delId)
+    // console.log(delId)
     newTodo.splice(delId, 1)
     setTodoList(newTodo);
+  }
+
+  const changeCompleteTodo = id => {
+    let newCompleteTodo = [...todoList]
+    let changeCompleteId = newCompleteTodo.findIndex(el => id === el.id)
+    console.log(changeCompleteId);
+    newCompleteTodo[changeCompleteId].completed = !newCompleteTodo[changeCompleteId].completed;
+    setTodoList(newCompleteTodo)
+    
   }
 
   return (
@@ -40,7 +49,7 @@ function App() {
         <AddTodo createTodo={createTodo} />
         <SearchBar />
         <RemainingMessage />
-        <TodoList todoList={todoList} deleteTodo={deleteTodo} />
+        <TodoList todoList={todoList} deleteTodo={deleteTodo} changeCompleteTodo={changeCompleteTodo} />
       </div>  
     </div>
   );
