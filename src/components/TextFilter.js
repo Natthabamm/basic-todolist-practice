@@ -1,12 +1,21 @@
-function TextFilter() {
-    return (
-      <div className="input-group">
-        <input type="text" className="form-control rounded-0" />
-        <button className="btn btn-secondary rounded-0">
-          <i className="fas fa-times" />
+function TextFilter(props) {
+
+  const handleChangeText = e => {
+    props.setSearchText(e.target.value);
+  };
+  return (
+    <div className="input-group">
+      <input type="text" 
+        className="form-control rounded-0" 
+        value={props.searchText} 
+        onChange={handleChangeText}/>
+      <button className="btn btn-secondary rounded-0"
+        onClick={() => props.setSearchText('')}
+      >
+        <i className="fas fa-times" />
         </button>
-      </div>
-    );
-  }
+    </div>
+  );
+}
   
   export default TextFilter;

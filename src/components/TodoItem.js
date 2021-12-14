@@ -1,4 +1,4 @@
-import EditTodo from './EditTodo';
+// import EditTodo from './EditTodo';
 
 function TodoItem(props) {
   const deleteTodo = () => {
@@ -19,7 +19,7 @@ function TodoItem(props) {
         <button className="btn btn-info rounded-0" onClick={changeCompleteTodo} >
           <i className={`fas fa-toggle-${props.todoItem.completed ? 'on' : 'off'}`} />
         </button>
-        <button className="btn btn-danger rounded-0" onClick={deleteTodo} >
+        <button className="btn btn-danger rounded-0" onClick={deleteTodo}  > 
           <i className="far fa-trash-alt" />
         </button>
       </div>
