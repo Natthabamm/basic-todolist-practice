@@ -20,7 +20,7 @@ const initialTodoList = [
 
 function App() {
   const [todoList, setTodoList] = useState(initialTodoList);
-  const [status, setStatus] = useState(0); // 0 = all, 1 = complete, 2 = uncomplete
+  // const [status, setStatus] = useState(0); // 0 = all, 1 = complete, 2 = uncomplete
   // const [searchTerm, setSearchTerm] = useState({ text: '', status: '' });
   const [searchStatus, setSearchStatus] = useState('');
   const [searchText, setSearchText] = useState('');
@@ -44,6 +44,13 @@ function App() {
     let changeCompleteId = newCompleteTodo.findIndex(el => id === el.id)
     newCompleteTodo[changeCompleteId].completed = !newCompleteTodo[changeCompleteId].completed;
     setTodoList(newCompleteTodo)
+  }
+
+  const isEditTodo = (id, title) => {
+    let newEditTodo = [...todoList]
+    let changeCompleteId = newEditTodo.findIndex(el => id === el.id)
+    newEditTodo[changeCompleteId].title = title;
+    setTodoList(newEditTodo)
   }
 
   // const updateTodo = (id, value) => {
@@ -78,7 +85,9 @@ function App() {
         <TodoList 
           todoList={filteredTodoList} 
           deleteTodo={deleteTodo} 
-          changeCompleteTodo={changeCompleteTodo} />
+          changeCompleteTodo={changeCompleteTodo}
+          isEditTodo={isEditTodo}
+          />
       </div>  
     </div>
   );

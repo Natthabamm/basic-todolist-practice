@@ -1,4 +1,18 @@
 {
     "editor.fontFamily": "FiraCode-Medium",
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    "rainbowString": {
+        "extensions": [
+            ".cs",
+            ".csx",
+            ".fs",
+            ".fsx",
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx",
+            ".csproj",
+            ".fsproj"
+        ]
+    }
 }
