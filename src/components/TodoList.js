@@ -5,7 +5,7 @@ function TodoList(props) {
     <div className="shadow">
       <ul className="list-group rounded-0">
         {props.todoList.map(item => (
-          <TodoItem todoItem={item} deleteTodo={props.deleteTodo} changeCompleteTodo={props.changeCompleteTodo} editTodo={props.editTodo} editTodo={props.editTodo} />
+          <TodoItem todoItem={item} key={item.id} deleteTodo={props.deleteTodo} updateTodo={props.updateTodo} editTodo={props.editTodo} editTodo={props.editTodo} />
         ))};
       </ul>
     </div>
