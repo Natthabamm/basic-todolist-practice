@@ -1,12 +1,17 @@
+import { useContext } from 'react';
+import { TodoListContext } from '../contexts/TodoListContext';
 import TodoItem from './TodoItem';
 
-function TodoList(props) {
+
+function TodoList() {
+  const { todoList, setTodolist } = useContext(TodoListContext);
   return (
     <div className="shadow">
       <ul className="list-group rounded-0">
-        {props.todoList.map(item => (
-          <TodoItem todoItem={item} key={item.id} deleteTodo={props.deleteTodo} updateTodo={props.updateTodo} editTodo={props.editTodo} editTodo={props.editTodo} />
-        ))};
+          {todoList.map(item => (
+          <TodoItem key={item.id} todo={item} />
+          ))}
+          
       </ul>
     </div>
   );

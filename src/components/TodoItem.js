@@ -1,51 +1,27 @@
 import EditTodo from './EditTodo';
-import { useState } from 'react'
 
-
-function TodoItem(props) {
-  const [isEdit, setIsEdit] = useState(false);
-
-  const handleClickDelete = () => {
-    props.deleteTodo(props.todoItem.id)
-  }
-
-  const handleClickToggle = () => {
-    props.updateTodo(props.todoItem.id, { completed: !props.todoItem.completed })
-  }
-
-
+function TodoItem({ todo: { title, completed, id }  }) {
+  
   return (
     <li className={`list-group-item d-flex justify-content-between align-items-center py-3 bd-callout bd-callout-${
-      props.todoItem.completed ? 'success' : 'warning'
-    }`}
-    >
-      {isEdit ? (
-        <EditTodo 
-          closeEditForm={() => setIsEdit(false)}
-          todoItem={props.todoItem}
-          updateTodo={props.updateTodo}
-        />
-        ) : (
+      completed ? 'success' : 'warning'}`}   >
+        {/* <EditTodo /> */}
           <>
-            <span onClick={() => setIsEdit(true)}>{props.todoItem.title}</span>
+            <span>{title}</span>
             <div className="btn-group">
-              <button className="btn btn-info rounded-0" onClick={handleClickToggle} >
-                <i className={`fas fa-toggle-${props.todoItem.completed ? 'on' : 'off'}`} />
+              <button className="btn btn-info rounded-0" >
+                <i className={`fas fa-toggle-${completed ? 'on' : 'off'}`} />
               </button>
               <button 
-                className="btn btn-danger rounded-0" 
-                onClick={handleClickDelete}  
+                className="btn btn-danger rounded-0"  
               > 
                 <i className="far fa-trash-alt" />
               </button>
             </div>
           </>
-        )}
     </li>
 
   );
 }
-
-
 
 export default TodoItem;
