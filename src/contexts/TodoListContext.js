@@ -14,11 +14,27 @@ function TodoListContextProvider(props) {
         fetchTodos();
     }, []);
 
-    const addTodo = () => {
+    const addTodo = async value => {
+        const res = await axios.post('http://localhost:8080/todos', value);
+        setTodoList(prev => [res.data.todo, ...prev]);
+    };
 
+    const updateTodo = async (id, value) => {
+        
     }
 
-    return <TodoListContext.Provider value={{ todoList, setTodoList }}>
+    const deleteTodo = async id => {
+        const res = await axios.delete(`http://localhost:8080/todos/${id}`);
+        const idx = todoList.findIndex(item => id === item.id);
+        const newTodoList =[...todoList];
+        if (newTodoList !== -1) {
+            newTodoList.splice(idx, 1)
+        }
+        setTodoList(newTodoList);
+    }
+
+
+    return <TodoListContext.Provider value={{ todoList, addTodo, updateTodo, deleteTodo }}>
         {props.children}
     </TodoListContext.Provider>
 }
