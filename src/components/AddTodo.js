@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useContext, useState } from "react";
 import { TodoListContext } from '../contexts/TodoListContext'
 

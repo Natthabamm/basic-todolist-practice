@@ -9,12 +9,12 @@ function App() {
   return (
     <div className="container">
       <div className="mt-5 mx-auto mw-xs">
-        <TodoListContextProvider>
-          <AddTodo />
-          <SearchBar />
-          <RemainingMessage  />
-          <TodoList />
-        </TodoListContextProvider>
+          <TodoListContextProvider>
+            <AddTodo />
+            <SearchBar />
+            <RemainingMessage  />
+            <TodoList />
+          </TodoListContextProvider>
       </div>  
     </div>
   );
