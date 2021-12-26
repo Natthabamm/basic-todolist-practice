@@ -4,9 +4,9 @@ import { createContext, useEffect, useState } from "react";
 const TodoListContext = createContext();
 
 function TodoListContextProvider(props) {
-    const [todoList, setTodoList] = useState([])
+    const [todoList, setTodoList] = useState([]);
 
-    useEffect(async () => {
+    useEffect(() => {
         const fetchTodos = async () => {
             const res = await axios.get('http://localhost:8080/todos');
             setTodoList(res.data.todos)
