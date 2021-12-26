@@ -22,7 +22,7 @@ function TodoListContextProvider(props) {
     const updateTodo = async (id, value) => {
         const idx = todoList.findIndex(item => item.id === id);
         if (idx !== -1) {
-            await axios.put('http://localhost:8080/todos' + id, {
+            await axios.put('http://localhost:8080/todos/' + id, {
                 ...todoList[idx],
                 ...value
             });
@@ -38,7 +38,7 @@ function TodoListContextProvider(props) {
     const deleteTodo = async id => {
         const idx = todoList.findIndex(item => item.id === id);
         if (idx !== -1) {
-            await axios.delete('http://localhost:8080/todos' + id);
+            await axios.delete('http://localhost:8080/todos/' + id);
             const newTodoList = [...todoList];
             newTodoList.splice(idx, 1)
             setTodoList(newTodoList);
