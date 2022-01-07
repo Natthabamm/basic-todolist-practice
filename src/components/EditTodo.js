@@ -7,7 +7,7 @@ function EditTodo({ cancelEdit, title: oldTitle, id }) {
 
   const handleSubmitForm = e => {
     e.preventDefualt();
-    updateTodo(id, { title });
+    updateTodo(id, { title: title });
     cancelEdit();
   };
 

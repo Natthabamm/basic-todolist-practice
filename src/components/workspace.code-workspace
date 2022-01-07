@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../clone/cc9-basic-todo-list-api"
+		},
+		{
+			"path": "../../../Desktop/react app/app"
+		},
+		{
+			"path": "../../../expense-trackers"
+		},
+		{
+			"path": "../../../codecamp#10/nodeJs"
+		},
+		{
+			"path": "../../../codecamp#10/labNodeJs"
+		},
+		{
+			"path": "../../../codecamp#10/express-class"
+		},
+		{
+			"path": "../../../codecamp#10/todo-list"
+		}
+	]
+}
