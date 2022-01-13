@@ -23,6 +23,24 @@
 		},
 		{
 			"path": "../../../codecamp#10/todo-list"
+		},
+		{
+			"path": "../../../codecamp#10/express-mysql"
+		},
+		{
+			"path": "../../../codecamp#10/lab-mysql"
+		},
+		{
+			"path": "../../../codecamp#10/express-sequelize"
+		},
+		{
+			"path": "../../../codecamp#10/epress-seq-cli"
+		},
+		{
+			"path": "../../../codecamp#10/express-sequrity"
+		},
+		{
+			"path": "../../../Desktop/my-project"
 		}
 	]
 }

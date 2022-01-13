@@ -1,22 +1,24 @@
-import AddTodo from './components/AddTodo';
-import SearchBar from './components/SearchBar';
-import TodoList from './components/TodoList';
-import RemainingMessage from './components/RemainingMessage';
-import TodoListContextProvider from './contexts/TodoListContext';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Header from './components/Header';
+import Register from './pages/Register';
 
 function App() {
 
   return (
-    <div className="container">
-      <div className="mt-5 mx-auto mw-xs">
-          <TodoListContextProvider>
-            <AddTodo />
-            <SearchBar />
-            <RemainingMessage  />
-            <TodoList />
-          </TodoListContextProvider>
-      </div>  
-    </div>
+    <>
+      <Header />
+      <div className="container">
+        <div className="mt-5 mx-auto mw-xs">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </div>  
+      </div>
+    </>
   );
 }
 
